@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1 cell_align_right">
+      <span class="badge">{{totalAnsweredNum}}</span>
+    </div>
+    <div class="col-xs-11 cell_align_left">
+      questions answered ( <span class="badge badge_correct" tittle="correct">{{correctNum}}</span> + <span class="badge badge_incorrect" tittle="incorrect">{{incorrectNum}}</span>)
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1 cell_align_right">
+      <span class="badge badge_questions_left">{{questionNumLeft}}</span>
+    </div>
+    <div class="col-xs-11 cell_align_left">
+      questions left
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1 cell_align_right">
+      <span class="badge badge_correct_needed">{{correctStillNeeded}}</span>
+    </div>
+    <div class="col-xs-11 cell_align_left">
+      correct answers needed to pass
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container" ng-if="question">
+      <p class="question"><span class="question_no">Q {{question.questionNo}}.</span><span>{{question.questionDesc}}</span></p>
+      <div>
+        <p class="question_opt" ng-repeat="opt in question.options">
+          <span ng-class="{opt_idx:true, opt_idx_clickable: !answered, a_{{$index}}:toBeChosen(opt.optionId), a_{{$index}}_press: hasChosen(opt.optionId), a_correct: isCorrect(opt.optionId), a_incorrect: isIncorrect(opt.optionId), a_{{$index}}_correct:showCorrect(opt.optionId)}" ng-click="choose(opt.optionId)" ng-disabled="answered"></span>
+          <span class="opt_desc">{{opt.optionDesc}}</span>
+        </p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-success" ng-click="answerLater()" ng-if="!answered && questionNumLeft > 1">Answer Later</button>
+        <button type="button" class="btn btn-success" ng-if="hasChosenOne && !answered" ng-click="submitAnswer()">Submit Answer</button>
+        <button ng-if="answered" type="button" class="btn btn-success" ng-click="continueExam()">Continue</button>
+      </div>
+  </div>
+  <div class="container" ng-if="!question">
+    <p ng-if="passed" class="result_passed">Congratulations, Passed! ({{correctNum}} correct answers out of {{questionTotal}} questions) </p>
+    <p ng-if="!passed" class="result_failed">Sorry, Failed. ({{correctNum}} correct answers out of {{questionTotal}} questions)</p>
+    <div>
+      <button type="button" class="btn btn-success" ng-click="practiceAgain()">Practice Again</button>
+      <button type="button" class="btn btn-success" ng-click="exitExam()">Exit Exam</button>
+    </div>
+  </div>
+  <hr>
+</div>

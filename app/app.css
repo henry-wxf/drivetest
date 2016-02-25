@@ -1,0 +1,149 @@
+.navbar {
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */ 
+.jumbotron {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.jumbotron h1{
+  font-family:"Savoye LET", "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.affix {
+  top:0px;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+/* This is needed as mentioned on http://angular-ui.github.io/bootstrap/#getting_started */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+ul.u {
+  list-style-type: none;
+}
+
+.cell_align_right {
+  text-align: right;
+  padding-right: 1px;
+}
+
+.cell_align_left {
+  text-align: left;
+  padding-left: 1px;
+}
+
+.badge {
+  margin-right: 5px;
+}
+.badge_correct {
+  background-color: #9BAC05;
+}
+.badge_incorrect {
+  background-color: #E83434;
+}
+.badge_correct_needed {
+  background-color: #0000FF;
+}
+.badge_questions_left{
+  background-color: #FFC826;
+}
+.question {
+  font-size: 18px;
+}
+
+.question_no {
+  font-weight: bold;
+  padding-right: 12px;
+}
+
+.question_opt {
+}
+
+.opt_idx {
+    display: inline-block;
+    height: 78px;
+    width: 78px;
+    vertical-align: middle;
+}
+
+.opt_idx_clickable {
+    cursor: pointer;
+}
+
+.a_0 {
+    background: transparent url("images/public/a.png") no-repeat scroll 0 0;
+}
+
+.a_1 {
+    background: transparent url("images/public/b.png") no-repeat scroll 0 0;
+}
+
+.a_2 {
+    background: transparent url("images/public/c.png") no-repeat scroll 0 0;
+}
+
+.a_3 {
+    background: transparent url("images/public/d.png") no-repeat scroll 0 0;
+}
+
+.a_0_press {
+    background: transparent url("images/public/a-press.png") no-repeat scroll 0 0;
+}
+
+.a_1_press {
+    background: transparent url("images/public/b-press.png") no-repeat scroll 0 0;
+}
+
+.a_2_press {
+    background: transparent url("images/public/c-press.png") no-repeat scroll 0 0;
+}
+
+.a_3_press {
+    background: transparent url("images/public/d-press.png") no-repeat scroll 0 0;
+}
+
+.a_0_correct {
+    background: transparent url("images/public/a-correct.png") no-repeat scroll 0 0;
+}
+
+.a_1_correct {
+    background: transparent url("images/public/b-correct.png") no-repeat scroll 0 0;
+}
+
+.a_2_correct {
+    background: transparent url("images/public/c-correct.png") no-repeat scroll 0 0;
+}
+
+.a_3_correct {
+    background: transparent url("images/public/d-correct.png") no-repeat scroll 0 0;
+}
+
+.a_correct {
+    background: transparent url("images/public/correct-mark.png") no-repeat scroll 0 0;
+}
+.a_incorrect{
+    background: transparent url("images/public/incorrect-mark.png") no-repeat scroll 0 0;
+}
+
+span.opt_desc {
+    font-size: 16px;
+}
+
+.result_passed {
+  color: #9BAC05;
+}
+.result_failed {
+  color: #E83434;
+}

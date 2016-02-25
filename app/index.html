@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="drivetest">
+<head>
+  <title>SGI Drive Test Practice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="app.css"/>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src='bower_components/lodash/lodash.js'></script>
+  <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
+  <script src="app.js"></script>
+  <script src="home_ctrl.js"></script>
+  <script src="exam_ctrl.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" data-spy="affix"  data-offset="160">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--
+      <a class="navbar-brand"><span class="glyphicon glyphicon-phone-alt"> 0452660594</span></a>
+      -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" ng-controller="NavCtrl">
+      <ul class="nav navbar-nav">
+        <li id="home" ng-class="{active: activeTab('HomeCtrl')}"><a href="#/home">Home</a></li>
+        <li id="exam" ng-class="{active: activeTab('ExamCtrl')}"><a href="#/exam">Exam</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="!authenticated" ng-class="{active: activeTab('NavCtrl')}">
+            <a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+        <!--
+        <li ng-show="authenticated" ng-class="{active: activeTab('AccountCtrl')}">
+            <a href="#/myaccount" ng-click="changeMenuItem('myaccount')"><span class="glyphicon glyphicon-user"></span> My Account</a>
+        </li>
+        <li ng-show="authenticated"><a href="" ng-click="signout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div ng-view></div>
+</div>
+<footer ng-show="!authenticated" class="container-fluid text-center">
+  <p>--- Thank You for Visiting ---</p>
+  <!--
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+  -->
+</footer>
+
+</body>
+</html>
